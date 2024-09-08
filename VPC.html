@@ -29,3 +29,10 @@ Go to ROute tables->Private Route -> Routes ->Add ->Nat Gateway -0.0..0.
 Now you have susccessfully setuped connection for private server try pinging ->ping www.google.com
 
 
+For vpc pairing ->Create to vpc in diffrent zones -> Create vpc connection->
+Edit route tables of both vpc -> Add Peering connection ->in ip mention targeting machines ip in both vpc
+Genrate sshkey-gen in both the machines ->add those sshs in authorized keys of each other ->
+try sending files to each other
+scp ghost.txt root@<ip>:/tmp
+
+
