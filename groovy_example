@@ -1,0 +1,50 @@
+Sure! Here’s a simple Jenkins Groovy pipeline script to build and deploy a Java application:
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'mvn clean install'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                sh 'mvn test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                sh 'scp target/my-app.jar user@server:/path/to/deploy'
+            }
+        }
+    }
+}
+
+Explanation of the Syntax
+pipeline:
+The main block that defines the entire pipeline.
+agent any:
+Specifies that the pipeline can run on any available agent.
+stages:
+Contains a sequence of stages to be executed.
+stage(‘Build’):
+Defines a stage named “Build”.
+steps: Contains the steps to be executed in this stage.
+echo ‘Building…’: Prints a message to the console.
+sh ‘mvn clean install’: Runs the Maven build command.
+stage(‘Test’):
+Defines a stage named “Test”.
+steps: Contains the steps to be executed in this stage.
+echo ‘Testing…’: Prints a message to the console.
+sh ‘mvn test’: Runs the Maven test command.
+stage(‘Deploy’):
+Defines a stage named “Deploy”.
+steps: Contains the steps to be executed in this stage.
+echo ‘Deploying…’: Prints a message to the console.
+sh ‘scp target/my-app.jar user@server:/path/to/deploy’: Copies the built application to the deployment server.
+This pipeline script will build, test, and deploy a Java application using Maven. If you have any more questions or need further details, feel free to ask!
