@@ -1,0 +1,33 @@
+Sure! Here’s a simple Terraform code example to create an AWS EC2 instance:
+
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+}
+
+Explanation of the Syntax
+Provider Block:
+provider "aws" {
+  region = "us-west-2"
+}
+
+provider “aws”: Specifies the AWS provider.
+region = “us-west-2”: Sets the AWS region where resources will be created.
+Resource Block:
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+}
+
+resource “aws_instance” “example”: Defines an AWS EC2 instance resource.
+ami: Specifies the Amazon Machine Image (AMI) ID to use for the instance.
+instance_type: Defines the type of instance (e.g., t2.micro).
+Key Points
+Blocks: The main structure in Terraform, such as provider and resource.
+Arguments: Key-value pairs inside blocks that configure the resource or provider.
+Labels: Identifiers for resources, like "aws_instance" and "example".
+This code will create a basic EC2 instance in the specified AWS region. If you have any more questions or need further details, feel free to ask!
