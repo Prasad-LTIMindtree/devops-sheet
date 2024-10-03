@@ -1,0 +1,39 @@
+Sure! Here’s a simple Ansible playbook to install Apache on a remote server:
+
+---
+- name: Install Apache
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Ensure Apache is installed
+      apt:
+        name: apache2
+        state: present
+
+Explanation of the Syntax
+Playbook Header:
+---
+
+Indicates the start of a YAML file.
+Play Definition:
+- name: Install Apache
+  hosts: webservers
+  become: yes
+
+name: A description of the play.
+hosts: Specifies the target hosts (in this case, a group named webservers).
+become: Allows privilege escalation (e.g., using sudo).
+Tasks:
+tasks:
+  - name: Ensure Apache is installed
+    apt:
+      name: apache2
+      state: present
+
+tasks: A list of tasks to be executed.
+name: A description of the task.
+apt: The module used to manage packages on Debian-based systems.
+name: The package to be managed (e.g., apache2).
+state: Ensures the package is present (installed).
+This playbook will install Apache on all servers in the webservers group. If you have any more questions or need further details, feel free to ask!
